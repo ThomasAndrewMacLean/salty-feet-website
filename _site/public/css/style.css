@@ -1,0 +1,116 @@
+/* Fonts loaded from public/fonts folder */
+@font-face {
+  font-family: "Bodoni";
+  src: url("../fonts/bodoni-mt-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Elephant";
+  src: url("../fonts/elephant-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --brown: #e0c8a2;
+  --light-bg: #fff5f0;
+  --dark-bg: #756c4e;
+  --dark-text: #322c26;
+  --light-text: #fff3ef;
+  --dark-title: #904f30;
+  --light-title: #c6a18e;
+  --gap: 2rem;
+  --big-title-size: 4rem;
+  --lg-text: 1.5rem;
+}
+
+body {
+  font-family: Bodoni, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--brown);
+  color: var(--dark-text);
+  font-size: 16px;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: Elephant, sans-serif;
+  color: var(--dark-title);
+}
+
+header {
+  background: var(--light-bg);
+
+  padding: 10px;
+  text-align: center;
+}
+header nav {
+  text-transform: uppercase;
+  font-family: Elephant, sans-serif;
+  color: var(--dark-title);
+}
+
+a {
+  color: inherit;
+}
+
+.block-light {
+  background: var(--light-bg);
+  color: var(--dark-text);
+  padding: 20px;
+}
+
+.block-dark {
+  background-color: var(--dark-bg);
+  color: var(--light-text);
+  padding: 40px;
+}
+
+.block {
+  position: relative;
+}
+h3.title-big {
+  font-size: var(--big-title-size);
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--light-title);
+}
+h4.title-name {
+  transform: translateY(-10px);
+}
+
+.block p + p {
+  margin-top: var(--gap);
+}
+.rightGirl,
+.leftGirl {
+  position: absolute;
+  object-fit: cover;
+  height: 130%;
+  top: -35px;
+}
+.rightGirl {
+  right: -50px;
+  width: auto;
+}
+
+.text-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: calc(var(--gap) * 2);
+}
+
+.text-image .image {
+  flex-shrink: 0;
+}
+.images {
+  height: 220px;
+  display: flex;
+  gap: calc(var(--gap) * 1);
+  justify-content: center;
+}
