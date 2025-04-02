@@ -24,6 +24,8 @@
   --gap: 2rem;
   --big-title-size: 4rem;
   --lg-text: 1.5rem;
+
+  --block-padding: 20px;
 }
 
 body {
@@ -68,8 +70,8 @@ a {
 .block-light {
   background: var(--light-bg);
   color: var(--dark-text);
-  padding: 20px;
-
+  padding: var(--block-padding);
+  width: 90%;
   max-width: 1200px;
   margin-inline: auto;
   border-radius: 1rem;
@@ -91,8 +93,9 @@ a {
   outline: 2px solid var(--light-bg);
   outline-offset: 4px;
   color: var(--light-text);
-  padding: 40px;
-  max-width: 1000px;
+  padding: calc(var(--block-padding) * 2);
+  width: 90%;
+  max-width: 1200px;
   margin-inline: auto;
   border-radius: 1rem;
 }
@@ -156,6 +159,7 @@ footer {
 @media (max-width: 768px) {
   :root {
     --big-title-size: 2.5rem;
+    --block-padding: 10px;
   }
   .leftGirl {
     display: none;
