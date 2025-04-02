@@ -116,9 +116,24 @@ h4.title-name {
 }
 
 @media (max-width: 768px) {
-  .rightGirl,
+:root{
+   --big-title-size: 2.5rem;
+}
   .leftGirl {
     display: none;
+  }
+  .rightGirl{
+    position: relative;
+    right: 0;
+  }
+  .block:has( .rightGirl){
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .images{
+    flex-direction: column;
+    gap: calc(var(--gap) * 0.5);
+    height: auto;
   }
   .text-image {
     flex-direction: column;
@@ -127,5 +142,12 @@ h4.title-name {
   .text-image .image {
     width: 100%;
     height: auto;
+  }
+  .text-image .image img{
+    width: 100%;
+    height: auto;
+  }
+  .text-image.image-first{
+    flex-direction: column-reverse;
   }
 }
