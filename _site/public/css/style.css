@@ -185,6 +185,8 @@ footer {
     flex-direction: column;
     gap: calc(var(--gap) * 0.5);
     height: auto;
+  }  .images  img{
+    width: 100%;
   }
   .text-image {
     flex-direction: column;
