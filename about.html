@@ -21,6 +21,7 @@ layout: layout.html
     alt=""
     class="rightGirl"
   />
+
   <div class="container">
     <h3 class="title-big">Founder</h3>
     <h4 class="title-name">Eylul Kusat</h4>
@@ -36,7 +37,8 @@ layout: layout.html
       this incredible underwater world with you. Whether you're a first-time
       diver or a seasoned explorer, you’re in safe hands.
     </p>
-    {% include "socialblock.html" email:"info@saltyfeet.be" insta:"eylulkusat"  %}
+    {% include "socialblock.html" email:"info@saltyfeet.be" insta:"eylulkusat"
+    %}
   </div>
 </section>
 
@@ -58,15 +60,11 @@ layout: layout.html
           wonder. I knew I wanted to be the one to guide others into that magic.
         </p>
       </div>
-      <div class="image">
-        <img src="/public/images/diving.JPEG" height="140" width="218" alt="" />
-      </div>
+      <div class="image">{% image "images/diving.JPEG", "Diving" %}</div>
     </div>
 
     <div class="text-image image-first mt2">
-      <div class="image">
-        <img src="/public/images/dog.png" height="183" width="137" alt="" />
-      </div>
+      <div class="image">{% image "images/dog.png", "Doggo" %}</div>
       <div class="text">
         <p>
           At 20, I took a detour from the sea and moved to Ghent, Belgium, to
@@ -90,8 +88,9 @@ layout: layout.html
 
 <section class="block block-dark mt3 filtered">
   <div class="images">
-    <img src="/public/images/dive.jpg" alt="" />
-    <img src="/public/images/tante.png" alt="" />
+  {% image "images/dive.jpg", "Diving center" %}
+  {% image "images/tante.png", "Aunt" %}
+  
   </div>
   <div class="container">
     <h4 class="text-white text-center mt text-lg">A Family Legacy...</h4>
@@ -149,9 +148,7 @@ layout: layout.html
           now share with others.
         </p>
       </div>
-      <div class="image">
-        <img src="/public/images/papa.png" width="320" height="205" alt="" />
-      </div>
+      <div class="image">{% image "images/papa.png", "My papa" %}</div>
     </div>
     {% include "socialblock.html" email:"" insta:"" %}
   </div>
@@ -160,9 +157,7 @@ layout: layout.html
 <section class="block block-light mt2">
   <div class="container container-wide">
     <div class="text-image image-first">
-      <div class="image">
-        <img src="/public/images/emre.png" width="222" height="295" alt="" />
-      </div>
+      <div class="image">{% image "images/emre.png", "My papa" %}</div>
       <div class="text">
         <h3 class="title-big">INSTRUCTOR</h3>
         <h4 class="title-name">Emre Kusat</h4>
@@ -196,7 +191,6 @@ layout: layout.html
         {% include "socialblock.html" email:"" insta:"" %}
       </div>
     </div>
-
   </div>
 </section>
 
@@ -228,19 +222,9 @@ layout: layout.html
           One thing’s for sure—wherever she goes, she’ll always find her way
           back to the sea
         </p>
-         {% include "socialblock.html" email:"" insta:"" %}
+        {% include "socialblock.html" email:"" insta:"" %}
       </div>
-      <div class="image">
-        <img
-          src="/public/images/lidya.png"
-          width="199"
-          height="265"
-          alt="Lidya"
-        />
-      </div>
+      <div class="image">{% image "images/lidya.png", "Lidya" %}</div>
     </div>
-
-       
-
   </div>
 </section>
