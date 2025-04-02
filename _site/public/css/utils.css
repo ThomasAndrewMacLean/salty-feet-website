@@ -3,8 +3,12 @@
 }
 
 .mt2 {
-  margin-top: calc(var(--gap) * 2);
-}
+    margin-top: calc(var(--gap) * 2);
+  }
+
+  .mt3 {
+    margin-top: calc(var(--gap) * 3);
+  }
 .mb {
   margin-bottom: var(--gap);
 }

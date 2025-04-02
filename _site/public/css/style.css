@@ -13,6 +13,7 @@
   font-style: normal;
 }
 
+
 :root {
   --brown: #e0c8a2;
   --light-bg: #fff5f0;
@@ -27,7 +28,7 @@
 }
 
 body {
-  font-family: Bodoni, sans-serif;
+  font-family: 'Courier New', Courier, monospace;
   margin: 0;
   padding: 0;
   background: var(--brown);
@@ -40,6 +41,13 @@ h3,
 h4 {
   font-family: Elephant, sans-serif;
   color: var(--dark-title);
+}
+
+
+img{
+  border-radius: 4px;
+  /* outline: 2px solid var(--light-bg);
+  outline-offset: 4px; */
 }
 
 header {
@@ -66,8 +74,13 @@ a {
 
 .block-dark {
   background-color: var(--dark-bg);
+    outline: 2px solid var(--light-bg);
+  outline-offset: 4px;
   color: var(--light-text);
   padding: 40px;
+  max-width: 1000px;
+  margin-inline:  auto;
+  border-radius:1rem;
 }
 
 .block {
@@ -107,6 +120,11 @@ h4.title-name {
 
 .text-image .image {
   flex-shrink: 0;
+}
+.text-image .image img{
+  height: 100%;
+   
+  width: 30vw;
 }
 .images {
   height: 220px;
