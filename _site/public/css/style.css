@@ -114,3 +114,18 @@ h4.title-name {
   gap: calc(var(--gap) * 1);
   justify-content: center;
 }
+
+@media (max-width: 768px) {
+  .rightGirl,
+  .leftGirl {
+    display: none;
+  }
+  .text-image {
+    flex-direction: column;
+    align-items: center;
+  }
+  .text-image .image {
+    width: 100%;
+    height: auto;
+  }
+}
