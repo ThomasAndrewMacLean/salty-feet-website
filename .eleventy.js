@@ -6,7 +6,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLiquidShortcode("image", imageShortcode);
   return {
     dir: {
-      input: ".", // Root directory
+      input: "src", // Root directory
       output: "_site", // Default output folder
     },
   };

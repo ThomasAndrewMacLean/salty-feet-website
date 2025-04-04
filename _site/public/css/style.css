@@ -17,6 +17,7 @@
   --brown: #e0c8a2;
   --light-bg: #fff5f0;
   --dark-bg: #756c4e;
+  --blue-bg: #506EA7;
   --dark-text: #322c26;
   --light-text: #fff3ef;
   --dark-title: #904f30;
@@ -66,7 +67,18 @@ header nav {
 a {
   color: inherit;
 }
-
+.block-blue{
+  padding: var(--block-padding);
+  background: var(--blue-bg);
+  color: var(--light-text);
+  width: 90%;
+  max-width: 1200px;
+  margin-inline: auto;
+  border-radius: 1rem;
+}
+.block-blue h2{
+  color: var(--light-text);
+}
 .block-light {
   background: var(--light-bg);
   color: var(--dark-text);
