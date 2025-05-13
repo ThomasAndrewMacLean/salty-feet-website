@@ -1,7 +1,13 @@
 .mt {
   margin-top: var(--gap);
 }
+.mt-sm {
+  margin-top: calc(var(--gap) * 0.5);
+}
 
+.mb-sm {
+  margin-bottom: calc(var(--gap) * 0.5);
+}
 .mt2 {
   margin-top: calc(var(--gap) * 2);
 }

@@ -1,0 +1,212 @@
+<div class="calendar">
+  <div>
+    <div class="calendar-day-header">MON</div>
+
+    <div class="calendar-day-body">
+      <div class="hours-block mt2">
+        <div class="hours">
+          <p>14:00</p>
+          <p>18:00</p>
+        </div>
+        <div class="activity">
+          <p>Training</p>
+        </div>
+      </div>
+
+      <div class="hours-block">
+        <div class="hours">
+          <p>20:00</p>
+        </div>
+        <div class="activity">
+          <p>Oldtown</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="calendar-day-header">TUE</div>
+
+    <div class="calendar-day-body">
+      <div class="hours-block mt2">
+        <div class="hours">
+          <p>14:00</p>
+          <p>18:00</p>
+        </div>
+        <div class="activity">
+          <p>Training</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="calendar-day-header">WED</div>
+
+    <div class="calendar-day-body">
+      <div class="hours-block mt">
+        <div class="hours">
+          <p>10:00</p>
+          <p>18:00</p>
+        </div>
+        <div class="activity">
+          <p>Boat tour</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="calendar-day-header">THU</div>
+
+    <div class="calendar-day-body">
+      <div class="hours-block mt">
+        <div class="hours">
+          <p>10:00</p>
+          <p>13:00</p>
+        </div>
+        <div class="activity">
+          <p>Turkish pancakes</p>
+          <p>Market</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="calendar-day-header">FRI</div>
+
+    <div class="calendar-day-body">
+      <div class="hours-block mt">
+        <div class="hours">
+          <p>10:00</p>
+          <p>20:00</p>
+        </div>
+        <div class="activity">
+          <p>Patara Ancient City</p>
+          <p>Beach Day</p>
+          <p>Sunset</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="calendar-day-header">SAT</div>
+
+    <p class="text-center mt bold">Arrival</p>
+    <p class="text-center mt bold">Departure</p>
+  </div>
+  <div>
+    <div class="calendar-day-header">SUN</div>
+
+    <div class="calendar-day-body">
+      <div class="hours-block mt2">
+        <div class="hours">
+          <p>14:00</p>
+          <p>18:00</p>
+        </div>
+        <div class="activity">
+          <p>Training</p>
+        </div>
+      </div>
+
+      <div class="hours-block">
+        <div class="hours">
+          <p>20:00</p>
+        </div>
+        <div class="activity">
+          <p>BBQ</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+      .calendar {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-auto-rows: 1fr;
+
+        width: 100%;
+
+        padding: 1rem;
+        padding-left: 50px;
+        gap: 10px;
+       }
+
+  @media screen and (max-width: 1200px) {
+        .calendar {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+      }
+
+
+        @media screen and (max-width: 800px) {
+        .calendar {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        }
+      }
+
+          @media screen and (max-width: 600px) {
+        .calendar {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        }
+      }
+
+      .calendar-day-header,
+      .calendar-day-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        background-color: var(--light-bg);
+        padding: 10px;
+      }
+
+      .activity {
+        font-size: 14px;
+        font-weight: bold;
+
+  }
+      .calendar-day-header {
+        text-align: center;
+        font-size: 12px;
+      }
+
+      .hours-block {
+        display: flex;
+        min-height: 75px;
+      }
+      .hours-block > .hours {
+        font-variant-numeric: tabular-nums;
+        font-family: monospace;
+        font-size: 12px;
+        padding-right: 5px;
+        margin-right: 5px;
+        border-right: 2px solid var(--dark-text);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .hours-block + .hours-block {
+        margin-top: 5px;
+      }
+      .calendar-day-body {
+        width: 100px;
+        font-size: 14px;
+      }
+
+    .calendar > div{
+        padding-right: 10px;
+        margin-right: 10px;
+        border-right: 1px solid #CCC;
+
+    }
+     .calendar > div:last-child{
+        border-right: none;
+     }
+      {# .calendar-day-body:last-child {
+        border-right: none;
+      } #}
+</style>

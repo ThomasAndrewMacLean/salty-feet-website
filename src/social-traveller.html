@@ -3,7 +3,7 @@ title: About
 layout: layout.html
 ---
 
-<section class="block block-blue mt">
+<section class="block block-blue mt2">
   <h2>How does it work?</h2>
   <p>
     When planning your trip, you have two options: <em>Social Traveler</em> or
@@ -21,12 +21,60 @@ layout: layout.html
   </p>
 </section>
 
-<section class="block block-light mt2">
-  <div class="text-image">
-    <div class="image">
-      <div class="book-card">
-        {% image "images/diving-school.jpg", "Diving school" %}
-      </div>
-    </div>
+<section class="block block-neutral flex align-center mt">
+  {% render 'start-booking.html' %}
+  <div>
+    <h2 class="text-center">What does your package look like?</h2>
+    <ul class="starlist text-center">
+      <li class="mt">
+        With Social Traveler, daily group activities are already planned and
+        included in the price. For the remaining time, you’re free to decide how
+        you’d like to spend your day. If you need suggestions or guidance, we’re
+        here to help you find the perfect activities.
+
+        <strong
+          >Scroll down to see the group activities included in price and explore
+          other experiences available around town.
+          <br />
+
+          "Additional desired activities can also be booked upon arrival in
+          town."</strong
+        >
+      </li>
+      <li class="mt">
+        The price varies depending on your room choice — shared or private — and
+        your airport pick-up location. If you’re joining the retreat with a
+        friend, we offer a special rate for sharing a room with your travel
+        buddy.
+
+        <strong>
+          We help you find the best flight and arrival airport according to your
+          preferences! Return flights start from 150 euros from Brussels</strong
+        >
+      </li>
+      <li class="mt">
+        After you confirm your preferred retreat dates, we’ll finalize your
+        booking within a week and request a prepayment to secure your spot.
+        <strong>
+          Go to the FAQ to learn more about getting there, prepayment and
+          cancellation policies, activities, and more.</strong
+        >
+      </li>
+    </ul>
   </div>
+</section>
+
+<section class="block block-light mt2 flex small-col">
+  <div class="">
+    <h3 class="text-center">What is included?</h3>
+    <ul class="starlist">
+      <li>Accommodation</li>
+      <li>Breakfast</li>
+      <li>PADI certification and training</li>
+      <li>Group activities</li>
+      <li>Airport pick-up and drop-off</li>
+    </ul>
+  </div>
+
+  {% render 'calendar.html' %}
 </section>
