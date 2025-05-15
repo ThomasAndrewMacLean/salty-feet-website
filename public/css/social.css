@@ -1,0 +1,23 @@
+.caroussel {
+  display: flex;
+
+  gap: calc(var(--gap) * 0.5);
+  overflow: auto;
+  scroll-snap-type: x mandatory;
+}
+.caroussel img {
+  width: 140px;
+  height: 255px;
+  object-fit: cover;
+  min-width: 140px;
+  scroll-snap-align: start;
+}
+
+.choose-room {
+  width: 550px;
+}
+.choose-room img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}

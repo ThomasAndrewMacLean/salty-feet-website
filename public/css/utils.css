@@ -108,3 +108,17 @@
   display: flex;
   gap: 5px;
 }
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gap {
+  gap: var(--gap);
+}
+
+.yellow-text {
+  color: var(--yellow-text);
+}
