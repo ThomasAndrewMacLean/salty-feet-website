@@ -18,6 +18,7 @@
   --light-bg: #fff5f0;
   --dark-bg: #756c4e;
   --blue-bg: #506ea7;
+  --light-blue-bg: #e1f0f7;
   --dark-text: #322c26;
   --light-text: #fff3ef;
   --dark-title: #904f30;
@@ -70,6 +71,10 @@ header nav {
   text-transform: uppercase;
   font-family: var(--font-header);
   color: var(--dark-title);
+  display: flex;
+  gap: var(--gap);
+  justify-content: center;
+  border-bottom: 2px solid var(--dark-title);
 }
 
 a {
@@ -111,6 +116,24 @@ a {
   margin-inline: auto;
   border-radius: 1rem;
 }
+
+.light-bg {
+  background: var(--light-bg);
+}
+
+.bg-light-blue,
+.light-blue-bg {
+  background: var(--light-blue-bg);
+}
+.block-light-blue {
+  padding: var(--block-padding);
+  background: var(--light-blue-bg);
+  color: var(--dark-text);
+  width: 90%;
+  max-width: 1200px;
+  margin-inline: auto;
+  border-radius: 1rem;
+}
 .block-full::after {
   content: "";
   display: block;
@@ -125,7 +148,8 @@ a {
   right: -100vw;
   z-index: -1;
 }
-.block-blue h2 {
+.block-blue h2,
+.block-blue h3 {
   color: var(--light-text);
 }
 .block-light {
@@ -163,6 +187,7 @@ a {
 
 .block {
   position: relative;
+  z-index: 1;
 }
 .large-text {
   font-size: var(--big-title-size);
