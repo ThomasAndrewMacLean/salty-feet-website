@@ -74,7 +74,14 @@ header nav {
   display: flex;
   gap: var(--gap);
   justify-content: center;
-  border-bottom: 2px solid var(--dark-title);
+  border-bottom: 1px solid var(--dark-title);
+  width: fit-content;
+  margin: auto;
+  padding-bottom: var(--gap);
+  margin-bottom: var(--gap);
+}
+nav a{
+  text-decoration: none;
 }
 
 a {
