@@ -29,6 +29,7 @@
   --gap: 2rem;
   --big-title-size: 4rem;
   --lg-text: 1.5rem;
+  --small-text-size: 12px;
 
   --block-padding: 20px;
   --border-radius: 15px;
@@ -159,6 +160,11 @@ a {
 .block-blue h3 {
   color: var(--light-text);
 }
+
+.block-light-blue h2,
+.block-light-blue h3 {
+  color: var(--dark-text);
+}
 .block-light {
   background: var(--light-bg);
   color: var(--dark-text);
@@ -199,6 +205,9 @@ a {
 .large-text {
   font-size: var(--big-title-size);
   line-height: 1;
+}
+.small-text{
+  font-size: var(--small-text-size);
 }
 h3.title-big {
   font-size: var(--big-title-size);
@@ -246,6 +255,9 @@ hr {
 }
 .flex {
   display: flex;
+}
+.space-between {
+  justify-content: space-between;
 }
 @media screen and (max-width: 768px) {
   .small-col {
