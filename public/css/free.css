@@ -24,7 +24,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+grid-template-columns: repeat(2, 1fr);
   gap: calc(var(--gap) * 0.5);
 }
 .grid-item {
@@ -49,8 +49,7 @@
 .dark-grid-item {
   background-color: var(--dark-title);
   color: var(--light-text) !important;
-  transform: translateY(-105px);
-}
+ }
 
 .dark-grid-item hr {
   border-color: var(--light-text);

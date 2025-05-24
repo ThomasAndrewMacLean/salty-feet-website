@@ -94,6 +94,9 @@
   font-size: var(--lg-text);
 }
 
+.text-xl{
+  font-size: var(--xl-text);
+}
 .text-xxl {
   font-size: var(--big-title-size);
 }
@@ -121,4 +124,14 @@
 
 .yellow-text {
   color: var(--yellow-text);
+}
+
+.accordion{
+  display: flex;
+  gap: calc(var(--gap) * 0.5);
+
+}
+
+.accordion > * {
+  flex: 1;
 }

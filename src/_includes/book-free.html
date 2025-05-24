@@ -1,0 +1,143 @@
+<form
+  action="
+"
+>
+  <h2 class="text-center text-xl mt2">Start to Shape your Holiday Package</h2>
+  <section class="block block-light mt" id="book">
+    <h3 class="text-lg">1.Pick your Accommodation type</h3>
+    <p>
+      Dependıng of your sıze of travelıng group and facılıtıes that you prefer
+      we gıve you a selecion of diffrent accomondation in any budget depending
+      on desired travel date and amount of travelers.
+    </p>
+    <div class="accordion mt">
+      <label class="acc-card" for="villa">
+        {% image "images/accomondations/villa.png", "Villa" %}
+        <div class="white-title">
+          <h4>VILLA</h4>
+          <a href="#dates" class="btn">Select</a>
+        </div>
+        <ul>
+          <li>For big friend groups and families</li>
+          <li>Stays possible from 4 to 12 people</li>
+          <li>Private garden and swimming pool</li>
+          <li>Daily pool maintanence</li>
+          <li>Starting from 500 € for a week</li>
+        </ul>
+        <input type="radio" id="villa" name="accommodation" value="villa" />
+      </label>
+      <label class="acc-card" for="apartment">
+        {% image "images/accomondations/hotel.png", "Hotel"%}
+
+        <div class="white-title">
+          <h4>HOTEL</h4>
+          <a href="#dates" class="btn">Select</a>
+        </div>
+        <ul>
+          <li>For small groups and solo travelers</li>
+          <li>Daily breakfast included in price</li>
+          <li>Shared swimming pool and terrace</li>
+          <li>Daily house keeper service</li>
+          <li>Starting from 400 € for a week</li>
+        </ul>
+        <input
+          type="radio"
+          id="apartment"
+          name="accommodation"
+          value="apartment"
+        />
+      </label>
+    </div>
+
+    <p class="mt text-center">
+      GO TO <a href="/gallery">GALLERY</a> TO SEE PHOTOS OF THE ACCOMODATION
+      OPTIONS!
+    </p>
+  </section>
+
+  <section class="block block-light mt2" id="dates">
+    <h3 class="text-lg">2. Choose the dates</h3>
+    <p>
+      The period that you choose date is the most determined your prıce range
+      for your stay.
+    </p>
+    <div class="flex mt gap">
+    <div class="date-picker">
+      <div>
+        Start Date:
+        <input
+          type="date"
+          name="start-date"
+          id="start-date"
+          class="input input-date"
+          placeholder="Start Date"
+        />
+      </div>
+      <div>
+        End Date:
+        <input
+          type="date"
+          name="end-date"
+          id="end-date"
+          class="input input-date"
+          placeholder="End Date"
+        />
+      </div>
+
+      <div>
+        Adults:
+        <input
+          type="number"
+          name="adults"
+          id="adults"
+          class="input input-number"
+          placeholder="Adults"
+          min="1"
+          max="10"
+          value="1"
+        />
+      </div>
+      <div>
+        Children:
+        <input
+          type="number"
+          name="children"
+          id="children"
+          class="input input-number"
+          placeholder="Children"
+          min="0"
+          max="10"
+          value="0"
+        />
+      </div>
+      <div>
+        Rooms:
+        <input
+          type="number"
+          name="rooms"
+          id="rooms"
+          class="input input-number"
+          placeholder="Rooms"
+          min="1"
+          max="10"
+          value="1"
+        />
+      </div>
+      <span class="center mt">
+        <a href="#activities" class="btn btn-light">Confirm</a>
+      </span>
+    </div>
+
+    {% render "priceapprox.html" %}
+    </div>
+  </section>
+
+  <section class="block block-light mt2" id="activities">
+    <h3 class="text-lg">3. Select your Preferred Activities</h3>
+    <p>
+      We offer a wide selection of activities—everything from scuba diving,
+      watersports, and adrenaline-filled adventures to more relaxed experiences
+      like boat tours, spa treatments, yoga, and beauty rituals.
+    </p>
+  </section>
+</form>

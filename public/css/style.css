@@ -29,11 +29,15 @@
   --gap: 2rem;
   --big-title-size: 4rem;
   --lg-text: 1.5rem;
+  --xl-text: 2.5rem;
   --small-text-size: 12px;
 
   --block-padding: 20px;
   --border-radius: 15px;
   --font-header: Elephant, sans-serif;
+}
+* {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -81,7 +85,7 @@ header nav {
   padding-bottom: var(--gap);
   margin-bottom: var(--gap);
 }
-nav a{
+nav a {
   text-decoration: none;
 }
 
@@ -206,7 +210,7 @@ a {
   font-size: var(--big-title-size);
   line-height: 1;
 }
-.small-text{
+.small-text {
   font-size: var(--small-text-size);
 }
 h3.title-big {
@@ -364,4 +368,68 @@ footer {
   .text-image.image-first {
     flex-direction: column-reverse;
   }
+}
+
+/* dialog {
+  margin: 0;  
+  transform: translateX(-50%);
+  margin-top: 20vh;
+  left: 50%;
+} */
+.acc-card {
+  background: var(--blue-bg);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  display: block;
+  color: var(--light-text);
+}
+
+.acc-card .white-title {
+  background-color: white;
+  text-align: center;
+  margin-left: -10px;
+  margin-right: -10px;
+
+  margin-top: -20px;
+  margin-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+.acc-card .white-title h4 {
+  font-size: 1.5rem;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.acc-card input {
+  display: none;
+}
+.acc-card .btn {
+  margin: 10px;
+}
+.acc-card:has(input:checked) {
+  outline: 2px solid var(--blue-bg);
+  outline-offset: 4px;
+}
+.acc-card img {
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+  margin: auto;
+}
+
+.date-picker {
+  background-color: var(--blue-bg);
+  width: 300px;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  color: var(--light-text);
+  
+}
+.date-picker > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.date-picker > div + div {
+  margin-top: 1rem;
 }
