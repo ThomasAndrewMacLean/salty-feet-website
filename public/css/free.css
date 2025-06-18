@@ -211,3 +211,27 @@
 .activity-checkbox{
   display: none;
 }
+
+@media (max-width: 768px) {
+.grid{
+  grid-template-columns: 1fr;
+}
+.choose-dates,
+.accordion {
+  flex-direction: column;
+}
+.date-picker{
+  width: 100%;
+}
+.blob{
+   font-size: 1.2rem;
+    max-width: 90vw;
+  padding: 0.75rem 2rem;
+}
+.amount-selector-wrapper {
+gap: 1rem;
+}
+.activity-card{
+  max-width: 90vw;
+}
+}
