@@ -24,7 +24,7 @@
 
 .grid {
   display: grid;
-grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: calc(var(--gap) * 0.5);
 }
 .grid-item {
@@ -49,9 +49,165 @@ grid-template-columns: repeat(2, 1fr);
 .dark-grid-item {
   background-color: var(--dark-title);
   color: var(--light-text) !important;
- }
+}
 
 .dark-grid-item hr {
   border-color: var(--light-text);
   border-width: 0.5px;
+}
+
+.blob {
+  width: fit-content;
+  margin: auto;
+  color: white;
+  padding: 1rem 4rem;
+  font-size: 2rem;
+  font-weight: 100;
+  letter-spacing: 0.2rem;
+  border-radius: 30px;
+  margin-bottom: 2rem;
+  text-align: center;
+
+  margin-top: 2rem;
+}
+
+.activities-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  list-style: none;
+  margin: 0;
+  background-color: white;
+  border-bottom: 2px solid var(--dark-brown);
+  color: var(--dark-brown);
+  font-weight: 600;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+}
+.activities-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-inline: 2rem;
+  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  align-items: stretch;
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-block:1rem;
+}
+.activity-card {
+  height: 100%;
+}
+
+.activity-card .wrappie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 20px;
+  height: auto;
+  scroll-snap-align: start;
+  scroll-margin-inline: 2rem;
+}
+
+.activity-card:has(.activity-checkbox:checked) .wrappie {
+  outline: 2px solid var(--color);
+  outline-offset: 5px;
+}
+
+.activity-card .top {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.activity-card h5 {
+  color: white;
+
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.activity-card .top img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+}
+
+.activity-card .bottom {
+  color: white;
+  width: 100%;
+  padding: 1rem;
+}
+
+.activity-card .bottom ul {
+  padding-left: 0rem;
+}
+
+.activity-card .bottom ul li {
+  margin-bottom: 0.5rem;
+}
+
+.amount-selector-wrapper {
+  display: flex;
+  gap: 4rem;
+  justify-content: space-between;
+  color: var(--dark-brown);
+  width: 100%;
+  align-items: center;
+  border-top: 1px solid var(--dark-brown);
+  border-bottom: 1px solid var(--dark-brown);
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+
+.amount-selector {
+  border: 1px solid var(--dark-brown);
+  border-radius: 5px;
+  display: flex;
+}
+.amount-selector input {
+  appearance: textfield;
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+  margin: 0;
+  outline: none;
+}
+
+.amount-selector input::-webkit-outer-spin-button,
+.amount-selector input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.amount-selector input,
+.amount-selector button {
+  background: none;
+  border: none;
+  text-align: center;
+  color: inherit;
+}
+
+.white-bar {
+  background-color: white;
+  height: 4rem;
+}
+
+.get-price {
+  background-color: var(--dark-brown);
+  color: var(--brown);
+  font-size: 2rem;
+  border-radius: 40px;
+}
+
+.activity-checkbox{
+  display: none;
 }

@@ -15,8 +15,13 @@
 
 :root {
   --brown: #e0c8a2;
+  --light-brown: #d1955b;
+  --dark-brown: #a16340;
   --light-bg: #fff5f0;
   --dark-bg: #756c4e;
+
+  --light-brown-bg: #e3d2b2;
+  --grey-bg: #857f62;
   --blue-bg: #506ea7;
   --light-blue-bg: #e1f0f7;
   --dark-text: #322c26;
@@ -40,24 +45,29 @@
   scroll-behavior: smooth;
 }
 
+html {
+  overflow-x: clip;
+}
 body {
   font-family: "Josefin Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
   margin: 0;
-  padding: 0;
   overflow-x: clip;
-  background: var(--brown);
-  color: var(--dark-text);
+
+  padding: 0;
+  background: var(--light-bg);
+  color: var(--dark-brown);
   font-size: 16px;
 }
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
   font-family: var(--font-header);
-  color: var(--dark-title);
+  color: var(--dark-brown);
 }
 
 img {
@@ -75,7 +85,7 @@ header {
 header nav {
   text-transform: uppercase;
   font-family: var(--font-header);
-  color: var(--dark-title);
+
   display: flex;
   gap: var(--gap);
   justify-content: center;
@@ -103,6 +113,7 @@ a {
   border: none;
   padding: 10px 30px;
   text-decoration: none;
+  cursor: pointer;
 }
 .btn-full {
   width: 100%;
@@ -119,6 +130,12 @@ a {
   margin-inline: auto;
   border-radius: 1rem;
 }
+.block-brown {
+  background-color: var(--brown) !important;
+}
+.block-border {
+  border: 2px solid var(--dark-brown);
+}
 .block-blue {
   padding: var(--block-padding);
   background: var(--blue-bg);
@@ -132,7 +149,9 @@ a {
 .light-bg {
   background: var(--light-bg);
 }
-
+.bg-light-brown {
+  background: var(--light-brown-bg);
+}
 .bg-light-blue,
 .light-blue-bg {
   background: var(--light-blue-bg);
@@ -285,6 +304,12 @@ hr {
   list-style-image: url(/public/icons/star.svg);
 }
 
+.flowerlist li {
+  list-style-image: url(/public/icons/flower.svg);
+}
+.flowerlist strong {
+  font-weight: 600;
+}
 .starlist strong {
   margin-top: 1rem;
   color: var(--darker-title);
@@ -324,10 +349,28 @@ hr {
 }
 
 footer {
-  background: var(--dark-bg);
-  color: var(--light-text);
-  padding: 20px;
+   padding: 20px;
   text-align: center;
+}
+.footer{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: left;
+  justify-content: space-between;
+}
+.footer a{
+  text-decoration: none;
+}
+.footer .links{
+  display: flex;
+  flex-direction: column;
+   
+  
+}
+
+.footer .right{
+ text-align: right;
+  
 }
 @media (max-width: 768px) {
   :root {
@@ -423,7 +466,6 @@ footer {
   padding: 20px;
   border-radius: var(--border-radius);
   color: var(--light-text);
-  
 }
 .date-picker > div {
   display: flex;
