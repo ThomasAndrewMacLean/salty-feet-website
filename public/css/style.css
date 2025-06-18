@@ -95,6 +95,32 @@ header nav {
   padding-bottom: var(--gap);
   margin-bottom: var(--gap);
 }
+header nav a.active,
+header nav a:hover {
+  position: relative;
+  color: var(--dark-title);
+}
+header nav a {
+  position: relative;
+  transition: color 0.2s;
+}
+header nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: var(--dark-title);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+  pointer-events: none;
+}
+header nav a.active,
+header nav a:hover::after {
+  transform: scaleX(1);
+}
 nav a {
   text-decoration: none;
 }
@@ -191,11 +217,6 @@ a {
 .block-light {
   background: var(--light-bg);
   color: var(--dark-text);
-  padding: var(--block-padding);
-  width: 90%;
-  max-width: 1200px;
-  margin-inline: auto;
-  border-radius: 1rem;
 }
 
 .filtered {
@@ -224,6 +245,11 @@ a {
 .block {
   position: relative;
   z-index: 1;
+  padding: var(--block-padding);
+  width: 90%;
+  max-width: 1200px;
+  margin-inline: auto;
+  border-radius: 1rem;
 }
 .large-text {
   font-size: var(--big-title-size);
@@ -349,39 +375,36 @@ hr {
 }
 
 footer {
-   padding: 20px;
+  padding: 20px;
   text-align: center;
 }
-.footer{
+.footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   text-align: left;
   justify-content: space-between;
 }
-.footer a{
+.footer a {
   text-decoration: none;
 }
-.footer .links{
+.footer .links {
   display: flex;
   flex-direction: column;
-   
-  
 }
 
-.footer .right{
- text-align: right;
-  
+.footer .right {
+  text-align: right;
 }
 @media (max-width: 768px) {
   :root {
     --big-title-size: 2.5rem;
     --block-padding: 10px;
   }
-  .flip-small{
+  .flip-small {
     display: flex;
     flex-direction: column-reverse;
   }
-  .choose-room{
+  .choose-room {
     width: 100% !important;
   }
   .leftGirl {
@@ -419,12 +442,11 @@ footer {
     flex-direction: column-reverse;
   }
 
-  .footer{
+  .footer {
     grid-template-columns: 1fr;
     text-align: center;
-
   }
-  .footer .right{
+  .footer .right {
     text-align: center;
     margin-bottom: 2rem;
   }
