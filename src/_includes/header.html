@@ -5,4 +5,20 @@
     /></a>
   </h1>
 
+  <nav>
+    <a class="{% if page.url == '/' %}active{% endif %}" href="/">HOME</a>
+    <a class="{% if page.url == '/about' %}active{% endif %}" href="/about"
+      >MEET THE CREW</a
+    >
+    <a
+      class="{% if page.url == '/social-traveller' %}active{% endif %}"
+      href="/social-traveller"
+      >THE SOCIAL TRAVELLER</a
+    >
+    <a
+      class="{% if page.url == '/free-traveller' %}active{% endif %}"
+      href="/free-traveller"
+      >THE FREE TRAVELLER</a
+    >
+  </nav>
 </header>
