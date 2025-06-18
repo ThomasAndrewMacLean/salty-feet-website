@@ -1,0 +1,50 @@
+<article class="activity-card" >
+ <div class="wrappie" style="background-color: var({{color}});--color:var({{color}});">
+
+   <h5>{{title}}</h5>
+   <div class="top">
+     {% image image, title %}
+
+    {% if treatments %}
+     <div class="amount-selector-wrapper">
+      Choose your treatments below
+     </div>{% endif %}
+
+     <div class="amount-selector-wrapper  {% if treatments %}hidden{% endif %}">
+       <span> Amount </span>
+       <div class="amount-selector">
+         <button type="button" class="decrement">-</button>
+         <input
+         type="number"
+         name="activity-{{id}}-amount"
+         min="0"
+         value="0"
+         class="input input-number"
+         />
+         <button type="button" class="increment">+</button>
+        </div>
+      </div>
+      
+      <div class="center">
+        <label class="btn" data-activity="{{id}}" for="activity-{{id}}">Select</label>
+        <input type="checkbox" class="activity-checkbox" name="activity-{{id}}" id="activity-{{id}}">
+      </div>
+      <div class="center">
+        <span class="price">{{priceText}}</span>
+      </div>
+    </div>
+    <div class="bottom">
+      <ul class="flowerlist">
+        <li>{{items | split: "|" | join: "</li>
+        <li>" }}</li>
+      </ul>
+    </div>
+  </div>
+  {% if extras %}
+    <ul class="flowerlist">
+        <li>{{extras | split: "|" | join: "</li>
+        <li>" }}</li>
+      </ul>
+  
+      {% endif %}
+</article>

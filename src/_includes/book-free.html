@@ -1,0 +1,387 @@
+<form
+  action="
+"
+>
+  <h2 class="text-center text-xl mt2">Start to Shape your Holiday Package</h2>
+  <section class="block block-light  block-border block-brown  mt" id="book">
+    <h3 class="text-lg">1.Pick your Accommodation type</h3>
+    <p>
+      Dependıng of your sıze of travelıng group and facılıtıes that you prefer
+      we gıve you a selecion of diffrent accomondation in any budget depending
+      on desired travel date and amount of travelers.
+    </p>
+    <div class="accordion mt">
+      <label class="acc-card" for="villa">
+        {% image "images/accomondations/villa.png", "Villa" %}
+        <div class="white-title">
+          <h4>VILLA</h4>
+          <a href="#dates" class="btn">Select</a>
+        </div>
+        <ul>
+          <li>For big friend groups and families</li>
+          <li>Stays possible from 4 to 12 people</li>
+          <li>Private garden and swimming pool</li>
+          <li>Daily pool maintanence</li>
+          <li>Starting from 500 € for a week</li>
+        </ul>
+        <input type="radio" id="villa" name="accommodation" value="villa" />
+      </label>
+      <label class="acc-card" for="apartment">
+        {% image "images/accomondations/hotel.png", "Hotel"%}
+
+        <div class="white-title">
+          <h4>HOTEL</h4>
+          <a href="#dates" class="btn">Select</a>
+        </div>
+        <ul>
+          <li>For small groups and solo travelers</li>
+          <li>Daily breakfast included in price</li>
+          <li>Shared swimming pool and terrace</li>
+          <li>Daily house keeper service</li>
+          <li>Starting from 400 € for a week</li>
+        </ul>
+        <input
+          type="radio"
+          id="apartment"
+          name="accommodation"
+          value="apartment"
+        />
+      </label>
+    </div>
+
+    <p class="mt text-center">
+      GO TO <a href="/gallery">GALLERY</a> TO SEE PHOTOS OF THE ACCOMODATION
+      OPTIONS!
+    </p>
+  </section>
+
+  <section class="block block-light block-border block-brown mt2" id="dates">
+    <h3 class="text-lg">2. Choose the dates</h3>
+    <p>
+      The period that you choose date is the most determined your prıce range
+      for your stay.
+    </p>
+    <div class="flex mt gap choose-dates">
+      <div class="date-picker">
+        <div>
+          Start Date:
+          <input
+            type="date"
+            name="start-date"
+            id="start-date"
+            class="input input-date"
+            placeholder="Start Date"
+          />
+        </div>
+        <div>
+          End Date:
+          <input
+            type="date"
+            name="end-date"
+            id="end-date"
+            class="input input-date"
+            placeholder="End Date"
+          />
+        </div>
+
+        <div>
+          Adults:
+          <input
+            type="number"
+            name="adults"
+            id="adults"
+            class="input input-number"
+            placeholder="Adults"
+            min="1"
+            max="10"
+            value="1"
+          />
+        </div>
+        <div>
+          Children:
+          <input
+            type="number"
+            name="children"
+            id="children"
+            class="input input-number"
+            placeholder="Children"
+            min="0"
+            max="10"
+            value="0"
+          />
+        </div>
+        <div>
+          Rooms:
+          <input
+            type="number"
+            name="rooms"
+            id="rooms"
+            class="input input-number"
+            placeholder="Rooms"
+            min="1"
+            max="10"
+            value="1"
+          />
+        </div>
+        <span class="center mt">
+          <a href="#activities" class="btn btn-light">Confirm</a>
+        </span>
+      </div>
+
+      {% render "priceapprox.html" %}
+    </div>
+  </section>
+
+  <section class="block block-light block-full mt2" id="activities">
+    <h3 class="text-lg">3. Select your Preferred Activities</h3>
+    <p>
+      We offer a wide selection of activities—everything from scuba diving,
+      watersports, and adrenaline-filled adventures to more relaxed experiences
+      like boat tours, spa treatments, yoga, and beauty rituals.
+    </p>
+  </section>
+  <section class="light-blue-bg">
+    <nav>
+      <ul class="activities-nav">
+        <li>
+          <a href="#scuba"> SCUBA DIVING </a>
+        </li>
+        <li>
+          <a href="#water"> WATER ACTIVITIES </a>
+        </li>
+        <li>
+          <a href="#land"> LAND ACTIVITIES </a>
+        </li>
+        <li>
+          <a href="#beauty"> BEAUTY AND WELLNESS </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div id="scuba">
+      <h4 class="blob" style="background-color: var(--blue-bg)">
+        SCUBA DIVING
+      </h4>
+      <ul class="activities-list">
+        <li>
+          {% render "activity.html", color: "--blue-bg", title: "Discover Dive",
+          image: "images/activities/discover.png", id: "scuba-diving", price:
+          80, priceText: "80 € pp", items: "No certification needed|1-day scuba
+          experience with 2 dives|Minimum age: 10 years|Opportunity to continue
+          with a PADI course|Fish feeding and GoPro photos|Dive as a group with
+          friends and family" %}
+        </li>
+
+        <li>
+          {% render "activity.html", color: "--blue-bg", title: "PADI Course",
+          image: "images/activities/padi.png", id: "padi", price: 350,
+          priceText: "350 € pp", items: "3-day course with 2 dives per day + 2
+          shore dives|PADI Open water, Advanced Open Water, or Rescue Diver
+          (based on your current level)|Ages 15+ for standard certification|PADI
+          Junior available for ages 10-14|Includes PADI e-learning and
+          certification" %}
+        </li>
+
+        <li>
+          {% render "activity.html", color: "--blue-bg", title: "Refresh Dive",
+          image: "images/activities/beach.png", id: "refresh-dive", price: 80,
+          priceText: "80 € pp", items: "2 dives included|Recommended for divers
+          who haven't dived in a while|First dive includes skills practice
+          (e.g., mask clearing, regulator recovery)|Second dive is a relaxed fun
+          dive with GoPro footage|Certification required" %}
+        </li>
+
+        <li>
+          {% render "activity.html", color: "--blue-bg", title: "Boat Dive",
+          image: "images/activities/boatdive.png", id: "boat-dive", price: 85,
+          priceText: "85 € pp", items: "2 dives included|Departure at 09:00
+          return around 13:00|Explore various sites (wrecks, reefs,
+          walls)|Certification required" %}
+        </li>
+      </ul>
+
+      <span class="center pt2 pb2 brown-text">
+        <img
+          src="/public/icons/flower.svg"
+          height="20"
+          style="padding-right: 10px"
+          alt=""
+        />
+        Please mention your current certification level in the Extra
+        Requirements section when submitting your inquiry.
+      </span>
+    </div>
+
+    <div class="white-bar"></div>
+    <div id="water">
+      <h4 class="blob" style="background-color: var(--dark-brown)">
+        KEEP SALTY - OTHER WATER ACTIVITIES
+      </h4>
+
+      <ul class="activities-list">
+        <li>
+          {% render "activity.html", color: "--dark-brown", title: "SNORKELING",
+          image: "images/activities/snorkeling.png", id: "snorkeling", price:
+          20, priceText: "20 € pp", items: "90-minute sessions at different
+          times|Briefing about the snorkeling site|Fish feeding|High-quality
+          equipment|GoPro pictures and videos|After the slot, you can spend the
+          day at the beach to relax and enjoy the sea" %}
+        </li>
+
+        <li>
+          {% render "activity.html", color: "--dark-brown", title: "BOAT TOUR",
+          image: "images/activities/watersports.png", id: "boat-tour", price:
+          60, priceText: "60 - 100 € pp", items: "Full-day tour:
+          <strong><u>10:00-17:00</u></strong
+          >|Sunset tours available on request|Visit<strong>4 bays</strong>:
+          Mouse Island, Gerenlik Beach, Muar Cure, and Aquarium Bay|Natural
+          <strong>clay bath</strong> in Muar Cure|<strong
+            >Swimming break</strong
+          >
+          at eacht stop|<strong
+            >Morning coffie, lunch and afternoon cake & fruits</strong
+          >
+          included" , extras: "Price varies by season and group size|For
+          <strong>private</strong> boat bookings
+          <strong>groups of 4+</strong> mention it in the
+          <strong>Extras Requirements section</strong> when submitting your
+          inquiry" %}
+        </li>
+
+        <li>
+          {% render "activity.html", color: "--dark-brown", title: "WATER
+          SPORTS", image: "images/activities/watersports.png", id:
+          "water-sports", price: 30, priceText: "30 - 100 € pp", items:
+          "Available all day|Solo or group activities|Available Activities:<br />-Waterski<br />-Wakboard<br />-Jetski<br />-Speed
+          Boat<br />-Parasailing<br />-Ringo<br />-Banana rides" , extras:
+          "Prices vary -- list your preferred activities in Extras Requirements
+          for a quote" %}
+        </li>
+
+        <li>
+          {% render "activity.html", color: "--dark-brown", title: "FISHING
+          TOUR", image: "images/activities/fishing.png", id: "fishing-tour",
+          price: 50, priceText: "+/- 50 € pp", items: "Different time slots of 3
+          hours|Sunrise and sunset options available|Trolling (sırtı) or
+          traditional line fishing|Boat capacity: up to 6 people" , extras:
+          "Total price varies based on number of people" %}
+        </li>
+      </ul>
+    </div>
+
+    <div class="white-bar"></div>
+    <div id="land">
+      <h4 class="blob" style="background-color: var(--grey-bg)">
+        KEEP DRY - LAND ACTIVITIES
+      </h4>
+
+      <ul class="activities-list">
+        <li>
+          {% render "activity.html", color: "--grey-bg", title: "HORSE RIDING",
+          image: "images/activities/horse-riding.png", id: "horse-riding",
+          price: 20, priceText: "+/- 75 € pp", items: "Morning or sunset
+          sessions <strong>(90 min)</strong>|Ride along<strong
+            >Patara Beach</strong
+          >
+          and through the scenic dunes|Option to combine with a visit to Patara
+          Ancient City and a beach day|Price may slightly vary depending on
+          transport and group size" %}
+        </li>
+
+        <li>
+          {% render "activity.html", color: "--grey-bg", title: "QUAD BIKE",
+          image: "images/activities/quad.png", id: "quad-bike", price: 40,
+          priceText: "+/- 40 € pp", items: "Morning or sunset sessions
+          <strong>(90 min)</strong>|Ride along<strong>Patara Beach</strong> and
+          through the scenic dunes|Option to combine with a visit to Patara
+          Ancient City and a beach day|Single or double riders per quad|Price
+          may slightly vary depending on the number of bikes, transport, and
+          group size" %}
+        </li>
+
+        <li>
+          {% render "activity.html", color: "--grey-bg", title: "SAFARI TOUR",
+          image: "images/activities/safari.png", id: "safari-tour", price: 75,
+          priceText: "75 € pp", items: "Full-day adventure:
+          <strong>09:30 - 18:00</strong>|Scenic 4x4 ride through mountain and
+          sea views|<strong>The program includes</strong><br />-Üzümlü Village
+          stop<br />-<strong>Saklikent Canyon</strong> hike<br />-<strong
+            >Lunch</strong
+          >
+          at the canyon<br />-Swimming and relaxing at
+          <strong>Patara Beach</strong>" %}
+        </li>
+
+        <li>
+          {% render "activity.html", color: "--grey-bg", title: "CANYON TOUR",
+          image: "images/activities/canyon.png", id: "canyon-tour", price: 75,
+          priceText: "75 € pp", items: "Full-day adventure:
+          <strong>09:30 - 18:00</strong>|<strong>The program includes</strong
+          ><br />-45-minute guided visit to <strong>Xanthos Ancient City</strong
+          ><br />-Hike and get in the water at <strong>Saklikent Canyon</strong
+          ><br />-Optional <strong>rafting</strong> available at additional
+          cost<br />-Swimming and relaxing at <strong>Patara Beach</strong>" %}
+        </li>
+      </ul>
+    </div>
+
+    <div class="white-bar"></div>
+    <div id="beauty">
+      <h4 class="blob" style="background-color: var(--light-brown)">
+        WELLNESS AND BEAUTY
+      </h4>
+
+      <ul class="activities-list">
+        <li>
+          {% render "activity.html", color: "--light-brown", title: "BEAUTY",
+          image: "images/activities/beauty.png", id: "beauty", price: 20,
+          priceText: "10 - 55 € per treatment", treatments:
+          "Manicure|Pedicure|Shellac Colour|Gel Nail|Prothese Nail|Eyebrow
+          tinting|Half leg waxing|Full leg waxing|Arm waxing|Under arm
+          waxing|Bikini waxing", prices:"25|30|20|20|55|15|15|25|15|10|25"%}
+        </li>
+
+        <li>
+          {% render "activity.html", color: "--light-brown", title: "MASSAGE",
+          image: "images/activities/massage.png", id: "massage", price: 20,
+          priceText: "35 - 70 € pp", items: "30-60 minutes, depending on your
+          preference|Location of your choice: spa, villa or poolside|Types:<br />-Oil
+          / Medical / Aromatherapy<br />-Full body / Half body / Face / Head
+          massage|Final price depends on type and druration - mention your
+          choice in Extra Requirements to receive a full quote" %}
+        </li>
+
+        <li>
+          {% render "activity.html", color: "--light-brown", title: "YOGA",
+          image: "images/activities/yoga.png", id: "yoga", price: 20, priceText:
+          "20 € pp", items: "60-minute classes by the sea|Open to all
+          levels|Morning or sunset sessions|Led by certified instructor
+          Olga|Private classes available at your villa (Mention it in the Extra
+          Requirements section when submitting your inquiry)" %}
+        </li>
+
+        <li>
+          {% render "activity.html", color: "--light-brown", title: "TURKISH
+          BATH", image: "images/activities/bath.png", id: "turkish-bath", price:
+          20, priceText: "35 € pp", items: "<strong>45-minute</strong>
+          traditional experience|<strong>The Program includes:</strong
+          ><br />-Full-body peeling (15 min)<br />-Foaming and foam massage<br />-Tea
+          service and relaxation time|Optional addons (extra cost): <br />-Face
+          mask<br />-Aroma/oil massage<br />-Manicure/Pedicure" %}
+        </li>
+      </ul>
+    </div>
+  </section>
+  <div class="white-bar"></div>
+
+  <section class="text-center bg-light-brown pt pb" id="book">
+    <h3 class="text-lg">4. Send your inquiry</h3>
+    <p>
+      Once you've made your selections, just click below to get an approximate
+      price. If you like what you see, go ahead and send your inquiry. Within 3
+      days—depending on the season and availability—we’ll get back to you with a
+      confirmed price and a handpicked selection of accommodation options.
+    </p>
+    <button type="button" class="btn get-price mt">Get your price!</button>
+  </section>
+</form>

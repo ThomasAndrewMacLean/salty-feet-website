@@ -5,9 +5,82 @@ css: /public/css/free.css
 ---
 
 <div class="light-bg">
-
-  <h2 class="text-center text-center large-text pt">FREE TRAVELER</h2>
+  <h2 class="text-center large-text pt">FREE TRAVELER</h2>
 </div>
 
+<section class="block block-light-blue mt2">
+  <h2 class="text-center text-dark">How does it work? - Step by step</h2>
+  <p>
+    <strong>Free Bird Traveler</strong> gives you the freedom to
+    <strong>shape your own holiday package</strong>. Choose your preferred
+    accommodation, travel dates, and the activities you want to fill your days
+    with. You <strong>set the budget and the vibe</strong>—we’ve got your back
+    with local tips and guidance, so you won’t waste a minute wondering what’s
+    next. Just dive into that Mediterranean magic and soak up the sun!
+  </p>
+
+  <div class="grid mt">
+    <div class="grid-item">
+      <h3>Create your holiday package</h3>
+      <ol>
+        <li>
+          <strong>Choose your dates</strong><br />
+          Decide when you want to travel, and how long you'd like to stay.
+        </li>
+
+        <li>
+          <strong>Pick your accomodation</strong><br />
+          Select the type of stay that fits your vibe -
+          <strong>Hotel or villa</strong>
+        </li>
+
+        <li>
+          <strong>Select your preferred activities</strong><br />
+          Fill your holiday with the experiences you want, from diving to yoga
+          and beyond.
+        </li>
+      </ol>
+    </div>
+
+    <div class="grid-item">
+      <h3>Receive an approximate price</h3>
+      <p>After submitting your choices, you’ll get an estimated price.</p>
+      <ol start="4">
+        <li>
+          <strong>Send your inquiry</strong><br />
+          We’ll get back to you <strong>within 3 days</strong> via email with a
+          <strong>detailed price and available accommodation</strong> options.
+        </li>
+      </ol>
+    </div>
+
+    <div class="grid-item">
+      <h3>Confirm your package</h3>
+      <p>Finalize your selection and confirm your booking.</p>
+      <ol start="5">
+        <li>
+          <strong>Secure your spot</strong><br />
+          Make a <strong>20% prepaymen</strong>t of the total price to lock in
+          your holiday.
+        </li>
+
+        <li>
+          <strong>Pay the rest on arrival</strong><br />
+          Settle the remaining balance when you arrive at your stay.
+        </li>
+      </ol>
+    </div>
+
+   {% render "priceapprox.html" %}
+  </div>
+</section>
+
+<section class="block block-light mt2 text-red-50">
+  <h2 class="text-center text-dark">What might your package look like?</h2>
+
+  {% render 'calendar.html' %}
+</section>
 
 
+
+{% render 'book-free.html' %}
