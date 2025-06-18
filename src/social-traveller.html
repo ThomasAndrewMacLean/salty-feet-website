@@ -1,5 +1,5 @@
 ---
-title: About
+title: Social Traveler
 layout: layout.html
 css: /public/css/social.css
 ---
@@ -65,8 +65,8 @@ css: /public/css/social.css
   </div>
 </section>
 
-<section class="block block-light mt2 flex small-col">
-  <div class="">
+<section class="block block-brown mt2 flex small-col" id="what-is-included">
+  <div class="" >
     <h3 class="text-center">What is included?</h3>
     <ul class="starlist">
       <li>Accommodation</li>
@@ -109,19 +109,21 @@ css: /public/css/social.css
   </div>
 </section>
 
-<section class="block block-light mt2 flex small-col gap">
+<section class="block block-light mt2 flex small-col gap" id="choose-room">
   <div class="choose-room">
     {% image "images/accomondations/5+.png", "room" %}
 
     <h3>Double room</h3>
 
-    <button class="btn">Confirm</button>
+    <label for="double" class="btn">Confirm</label>
+    <input type="radio" name="room" id="double">
   </div>
 
   <div class="choose-room">
     {% image "images/accomondations/4+.png", "room" %}
     <h3>Twin room</h3>
-    <button class="btn">Confirm</button>
+    <label for="twin" class="btn">Confirm</label>
+    <input type="radio" name="room" id="twin">
   </div>
 </section>
 
