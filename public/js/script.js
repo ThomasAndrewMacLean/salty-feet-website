@@ -126,6 +126,36 @@ const addGetPriceEventListener = () => {
     });
     setLastInputValue(activityId);
   });
+
+
+  getPriceBtn.addEventListener("click", (event) => {
+    const accomodation = document.querySelector("[name='accommodation']:checked");
+    const startDate = document.getElementById("start-date").value;
+    const endDate = document.getElementById("end-date").value;
+    const adults = document.getElementById("adults").value;
+    const children = document.getElementById("children").value;
+    const rooms = document.getElementById("rooms").value;
+    const activities = Array.from(document.querySelectorAll(".activity-checkbox:checked"))
+      .map((checkbox) => checkbox.id)
+      .join(", ");
+      const acitivietyAmounts = Array.from(document.querySelectorAll(".activity-input"))
+      .map((input) => {
+        const value = input.value;
+        if (value && value !== "0") {
+          return `${input.id.replace('activity-', '').replace('-amount', '')}: (${value})`;
+        }
+        return null;
+      })
+      .filter((amount) => amount !== null)
+      .join(", ");
+    document.getElementById("summary-accomodation").textContent = accomodation ? accomodation.value : "Not selected";
+
+    document.getElementById("summary-duration").textContent = `${startDate} to ${endDate}`;
+    document.getElementById("summary-people").textContent = `${adults} adult(s), ${children} child(ren)`;
+    document.getElementById("summary-rooms").textContent = `${rooms} room(s)`;
+    document.getElementById("summary-activities").textContent = acitivietyAmounts || "None";
+    openModalFree();
+  });
 };
 document.addEventListener("DOMContentLoaded", function () {
   wireUpAllAmountSelectors();
