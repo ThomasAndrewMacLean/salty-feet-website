@@ -19,7 +19,7 @@
           <dd id="summary-people"></dd>
         </dl>
 
-         <dl>
+        <dl>
           <dt>Number of Rooms:</dt>
           <dd id="summary-rooms"></dd>
         </dl>
@@ -58,7 +58,7 @@
           placeholder="Any additional requirements or preferences?"
           rows="4"
         ></textarea>
-        <button class="btn" type="submit">Get Guide</button>
+        <button class="btn" id="submit-form-modal" type="submit">Send</button>
       </form>
     </div>
   </div>
@@ -68,6 +68,8 @@
   function openModalFree() {
     document.getElementById("modal-free").style.display = "block";
   }
+
+  const apiURL = "https://salty-feet-enquiry-418706328134.europe-west1.run.app";
   // Optional: Close modal when clicking outside content
   window.onclick = function (event) {
     var modal = document.getElementById("modal-free");
@@ -75,6 +77,57 @@
       modal.style.display = "none";
     }
   };
+
+  const submitFormModalButton = document.getElementById("submit-form-modal");
+  const guideForm = document.getElementById("free-guide-form");
+
+  guideForm.addEventListener("submit", function (event) {
+    submitFormModalButton.textContent = "Sending...";
+    submitFormModalButton.disabled = true;
+    event.preventDefault();
+
+    const formData = new FormData(guideForm);
+    const data = Object.fromEntries(formData.entries());
+
+    // Collect summary data
+    const summaryData = {
+      accommodation: document.getElementById("summary-accomodation").innerText,
+      people: document.getElementById("summary-people").innerText,
+      rooms: document.getElementById("summary-rooms").innerText,
+      date: document.getElementById("summary-duration").innerText,
+      activities: document.getElementById("summary-activities").innerText,
+    };
+
+    // Combine form data with summary data
+    const payload = { ...data, ...summaryData };
+    console.log("Payload to send:", payload);
+    fetch(apiURL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data);
+
+        const getPriceBtn = document.querySelector(".get-price");
+
+        // Show success message
+        getPriceBtn.textContent = "Sent successfully!";
+        guideForm.reset();
+        submitFormModalButton.textContent = "Send";
+        submitFormModalButton.disabled = false;
+        document.getElementById("modal-free").style.display = "none";
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        submitFormModalButton.textContent = "Send";
+        submitFormModalButton.disabled = false;
+        alert("There was an error sending your guide. Please try again.");
+      });
+  });
 </script>
 <style>
   .modal {
@@ -118,7 +171,6 @@
 
   #modal-free dt {
     font-weight: bold;
-     
   }
   #free-guide-form input,
   #free-guide-form textarea {
