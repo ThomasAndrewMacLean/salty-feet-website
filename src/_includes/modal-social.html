@@ -1,0 +1,179 @@
+<div id="modal-social" class="modal" style="display: none">
+  <div class="modal-content">
+    <span
+      class="close"
+      onclick="document.getElementById('modal-social').style.display='none'"
+      >&times;</span
+    >
+    <h2>Almost there...</h2>
+
+    <div class="flex small-col gap">
+      <div class="summary flex1">
+        <h3>Summary</h3>
+        <dl>
+          <dt>Room type:</dt>
+          <dd id="summary-rooms"></dd>
+        </dl>
+        <dl>
+          <dt>Number of People:</dt>
+
+          <div class="amount-selector">
+            <button type="button" class="decrement">-</button>
+            <input
+              type="number"
+              name="people"
+              id="people"
+              min="0"
+              value="0"
+              class="input input-number activity-input"
+            />
+            <button type="button" class="increment">+</button>
+          </div>
+        </dl>
+      </div>
+      <form class="flex1" id="free-guide-form">
+        <label for="name">Name</label>
+        <input type="text" name="name" placeholder="Your name" required />
+
+        <label for="telephone">Telephone</label>
+        <input
+          type="tel"
+          name="telephone"
+          placeholder="Your telephone number"
+          required
+        />
+
+        <label for="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="Your email address"
+          required
+        />
+        <label for="requirements">Extras Requirements</label>
+        <textarea
+          name="requirements"
+          placeholder="Any additional requirements or preferences?"
+          rows="4"
+        ></textarea>
+        <button class="btn" id="submit-form-modal" type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
+<script>
+  // Example: Open modal function
+  function openModalSocial() {
+    document.getElementById("modal-social").style.display = "block";
+  }
+
+  const apiURL = "https://salty-feet-enquiry-418706328134.europe-west1.run.app";
+  // Optional: Close modal when clicking outside content
+  window.onclick = function (event) {
+    var modal = document.getElementById("modal-social");
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+
+  const submitFormModalButton = document.getElementById("submit-form-modal");
+  const guideForm = document.getElementById("free-guide-form");
+
+  guideForm.addEventListener("submit", function (event) {
+    submitFormModalButton.textContent = "Sending...";
+    submitFormModalButton.disabled = true;
+    event.preventDefault();
+
+    const formData = new FormData(guideForm);
+    const data = Object.fromEntries(formData.entries());
+
+    // Collect summary data
+    const summaryData = {
+      people: document.getElementById("people").value,
+      rooms: document.getElementById("summary-rooms").innerText,
+      accommodation: "hotel",
+    };
+
+    // Combine form data with summary data
+    const payload = { ...data, ...summaryData };
+    console.log("Payload to send:", payload);
+    fetch(apiURL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data);
+
+        const getPriceBtn = document.querySelector(".get-price");
+
+        // Show success message
+        getPriceBtn.textContent = "Sent successfully!";
+        guideForm.reset();
+        submitFormModalButton.textContent = "Send";
+        submitFormModalButton.disabled = false;
+        document.getElementById("modal-free").style.display = "none";
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        submitFormModalButton.textContent = "Send";
+        submitFormModalButton.disabled = false;
+        alert("There was an error sending your guide. Please try again.");
+      });
+  });
+</script>
+<style>
+  .modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .modal-content {
+    background: #fff;
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 700px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  .close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  #free-guide-form label {
+    display: block;
+
+    font-weight: bold;
+  }
+  #modal-social dl {
+    display: flex;
+    gap: 8px;
+    margin-top: 1rem;
+  }
+
+  #modal-social dt {
+    font-weight: bold;
+  }
+  #free-guide-form input,
+  #free-guide-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+</style>

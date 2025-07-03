@@ -4,6 +4,8 @@ layout: layout.html
 css: /public/css/social.css
 ---
 
+{%render 'modal-social.html' %}
+
 <section class="block block-blue">
   <h2>How does it work?</h2>
   <p>
@@ -110,7 +112,7 @@ css: /public/css/social.css
 </section>
 
 <section class="block block-light mt2 flex small-col gap" id="choose-room">
-  <div class="choose-room">
+   <div class="choose-room">
     {% image "images/accomondations/5+.png", "room" %}
 
     <h3>Double room</h3>
@@ -125,6 +127,9 @@ css: /public/css/social.css
     <label for="twin" class="btn">Confirm</label>
     <input type="radio" name="room" id="twin">
   </div>
+
+
+
 </section>
 
 <section class="block block-blue block-full mt2">
@@ -310,3 +315,23 @@ css: /public/css/social.css
     </div>
   </div>
 </section>
+
+
+<script>
+  document.getElementById("double").addEventListener("change", function() {
+    if (this.checked) {
+      document.getElementById("summary-rooms").innerText = "Double room";
+    }
+    openModalSocial();
+  });
+
+
+    document.getElementById("twin").addEventListener("change", function() {
+    if (this.checked) {
+      document.getElementById("summary-rooms").innerText = "Twin room";
+    }
+    openModalSocial();
+  });
+
+
+</script>
