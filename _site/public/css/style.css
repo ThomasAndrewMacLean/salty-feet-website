@@ -593,6 +593,7 @@ footer {
 @media (max-width: 768px) {
   .amount-selector-wrapper {
     gap: 1rem;
+    flex-direction: column;
   }
 }
 
