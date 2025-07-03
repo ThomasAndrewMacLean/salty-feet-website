@@ -47,23 +47,68 @@
       >THE FREE TRAVELLER</a
     >
 
-    <a
-      class=""
-      href="/gallery"
+    <a class="" href="/gallery"
       >GALLERY</a
     >
   </nav>
 </header>
+<div class="stickyHeader">
+  <nav class="">
+    <a class="" href="/">HOME</a>
+    <a class="" href="/about"
+      >MEET THE CREW</a
+    >
+    <a
+      class=""
+      href="/social-traveller"
+      >THE SOCIAL TRAVELLER</a
+    >
+    <a
+      class=""
+      href="/free-traveller"
+      >THE FREE TRAVELLER</a
+    >
+
+    <a class="" href="/gallery"
+      >GALLERY</a
+    >
+  </nav>
+</div>
+
+<button id="scrollUp">
+  ↑
+</button>
 
 <script>
+  document.querySelectorAll("nav a").forEach(function (link) {
+    console.log(link.href, window.location.origin + window.location.pathname);
+    if (link.href + "/" === window.location.origin + window.location.pathname) {
+      link.classList.add("active");
+    }
+  });
 
-document.querySelectorAll('nav a').forEach(function(link) {
-  console.log(link.href, window.location.origin + window.location.pathname )
-  if (link.href + "/" === window.location.origin + window.location.pathname ) {
-    link.classList.add('active');
+  const header = document.querySelector("header");
+  const scrollUpButton = document.getElementById("scrollUp");
+  const stickyHeader = document.querySelector(".stickyHeader");
+  if (header && "IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            stickyHeader.classList.add("sticky");
+            scrollUpButton.classList.add("visible");
+          } else {
+            stickyHeader.classList.remove("sticky");
+            scrollUpButton.classList.remove("visible");
+          }
+        });
+      },
+      { threshold: 0 }
+    );
+    observer.observe(header);
   }
-});
 </script>
+
 
     <main>
 <section class="block block-light block-border block-brown mt">

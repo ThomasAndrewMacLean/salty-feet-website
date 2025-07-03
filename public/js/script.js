@@ -114,7 +114,7 @@ const addGetPriceEventListener = () => {
 
   const activitiesAmounts = document.querySelectorAll(".activity-input");
   activitiesAmounts.forEach((input) => {
-     if (!input) return;
+    if (!input) return;
     const activityId = input.id;
     input.addEventListener("change", () => {
       const value = input.value;
@@ -127,37 +127,61 @@ const addGetPriceEventListener = () => {
     setLastInputValue(activityId);
   });
 
-
   getPriceBtn.addEventListener("click", (event) => {
-    const accomodation = document.querySelector("[name='accommodation']:checked");
+    const accomodation = document.querySelector(
+      "[name='accommodation']:checked"
+    );
     const startDate = document.getElementById("start-date").value;
     const endDate = document.getElementById("end-date").value;
     const adults = document.getElementById("adults").value;
     const children = document.getElementById("children").value;
     const rooms = document.getElementById("rooms").value;
-    const activities = Array.from(document.querySelectorAll(".activity-checkbox:checked"))
+    const activities = Array.from(
+      document.querySelectorAll(".activity-checkbox:checked")
+    )
       .map((checkbox) => checkbox.id)
       .join(", ");
-      const acitivietyAmounts = Array.from(document.querySelectorAll(".activity-input"))
+    const acitivietyAmounts = Array.from(
+      document.querySelectorAll(".activity-input")
+    )
       .map((input) => {
         const value = input.value;
         if (value && value !== "0") {
-          return `${input.id.replace('activity-', '').replace('-amount', '')}: (${value})`;
+          return `${input.id
+            .replace("activity-", "")
+            .replace("-amount", "")}: (${value})`;
         }
         return null;
       })
       .filter((amount) => amount !== null)
       .join(", ");
-    document.getElementById("summary-accomodation").textContent = accomodation ? accomodation.value : "Not selected";
+    document.getElementById("summary-accomodation").textContent = accomodation
+      ? accomodation.value
+      : "Not selected";
 
-    document.getElementById("summary-duration").textContent = `${startDate} to ${endDate}`;
-    document.getElementById("summary-people").textContent = `${adults} adult(s), ${children} child(ren)`;
+    document.getElementById(
+      "summary-duration"
+    ).textContent = `${startDate} to ${endDate}`;
+    document.getElementById(
+      "summary-people"
+    ).textContent = `${adults} adult(s), ${children} child(ren)`;
     document.getElementById("summary-rooms").textContent = `${rooms} room(s)`;
-    document.getElementById("summary-activities").textContent = acitivietyAmounts || "None";
+    document.getElementById("summary-activities").textContent =
+      acitivietyAmounts || "None";
     openModalFree();
+  });
+};
+const scrollUpListener = () => {
+  const scrollUpButton = document.getElementById("scrollUp");
+  scrollUpButton.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+  });
   });
 };
 document.addEventListener("DOMContentLoaded", function () {
   wireUpAllAmountSelectors();
   addGetPriceEventListener();
+  scrollUpListener();
 });
