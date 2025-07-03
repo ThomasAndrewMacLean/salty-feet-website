@@ -95,6 +95,7 @@ header nav {
   padding-bottom: var(--gap);
   margin-bottom: var(--gap);
 }
+
 header nav a.active,
 header nav a:hover {
   position: relative;
@@ -521,8 +522,6 @@ footer {
   margin-top: 1rem;
 }
 
-
-
 .amount-selector-wrapper {
   display: flex;
   gap: 1rem;
@@ -564,11 +563,8 @@ footer {
   color: inherit;
 }
 
-
 @media (max-width: 768px) {
-
-.amount-selector-wrapper {
-gap: 1rem;
-}
- 
+  .amount-selector-wrapper {
+    gap: 1rem;
+  }
 }

@@ -1,0 +1,25 @@
+body:has(video) header {
+  position: absolute;
+  top: 0;
+  z-index: 9;
+  width: 100%;
+  background: none;
+}
+body:has(video) header{
+    filter: brightness(0) invert(1);
+    color: white;
+}
+
+
+.hero-section  {
+    
+  margin-bottom: 3rem;
+}
+
+.hero-section video{
+        filter: blur(2px);
+}
+.hero-section h1{
+    color:white;
+    font-size: 3rem;
+}
