@@ -525,7 +525,7 @@ footer {
 
 .amount-selector-wrapper {
   display: flex;
-  gap: 4rem;
+  gap: 1rem;
   justify-content: space-between;
   color: var(--dark-brown);
   width: 100%;
