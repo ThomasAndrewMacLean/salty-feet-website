@@ -1,0 +1,15 @@
+---
+title: Gallery
+layout: layout.html
+css: /public/css/gallery.css
+---
+
+<div class="gallery">
+  {% assign numbers = (1..40) %} {% for i in numbers %}
+{% assign imgsrc = "/images/gallery/" | append: i | append: ".jpg" %}
+{% assign alt = "Gallery image Kalkan" %}
+  <div class="gallery-item">
+    {% image imgsrc, alt %}
+  </div>
+  {% endfor %}
+</div>
