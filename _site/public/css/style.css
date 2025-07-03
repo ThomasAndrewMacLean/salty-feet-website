@@ -631,7 +631,7 @@ footer {
     display: block;
     z-index: 99999;
     cursor:pointer;
-    color: black;
+    color: var(--dark-brown);
   }
   header {
     display: flex;
