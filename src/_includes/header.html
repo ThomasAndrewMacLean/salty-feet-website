@@ -1,8 +1,6 @@
 <header>
   <h1>
-    <a href="/"
-      ><img src="/public/images/salty_feet_logo.png" width="200" class="logo"
-    /></a>
+    <img src="/public/images/salty_feet_logo.png" width="200" class="logo" />
   </h1>
 
   <nav>
@@ -25,6 +23,25 @@
       >GALLERY</a
     >
   </nav>
+
+  <button class="mobile-menu-button">
+    <svg
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      aria-label="Open menu"
+      xmlns="http://www.w3.org/2000/svg"
+      class="hamburger-menu"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="3"
+      stroke-linecap="round"
+    >
+      <line x1="6" y1="9" x2="26" y2="9" />
+      <line x1="6" y1="16" x2="26" y2="16" />
+      <line x1="6" y1="23" x2="26" y2="23" />
+    </svg>
+  </button>
 </header>
 <div class="stickyHeader">
   <nav class="">
@@ -49,9 +66,7 @@
   </nav>
 </div>
 
-<button id="scrollUp">
-  ↑
-</button>
+<button id="scrollUp">↑</button>
 
 <script>
   document.querySelectorAll("nav a").forEach(function (link) {

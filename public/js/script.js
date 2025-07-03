@@ -176,12 +176,20 @@ const scrollUpListener = () => {
   scrollUpButton.addEventListener("click", () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: "smooth",
+    });
   });
+};
+
+const setupMobileMenu = () => {
+  const mobileMenuButton = document.querySelector(".mobile-menu-button");
+  mobileMenuButton.addEventListener("click", () => {
+    document.body.classList.toggle("mobile-menu-open");
   });
 };
 document.addEventListener("DOMContentLoaded", function () {
   wireUpAllAmountSelectors();
   addGetPriceEventListener();
   scrollUpListener();
+  setupMobileMenu();
 });
