@@ -55,6 +55,15 @@
   </nav>
 </header>
 
+<script>
+
+document.querySelectorAll('nav a').forEach(function(link) {
+  console.log(link.href, window.location.origin + window.location.pathname )
+  if (link.href + "/" === window.location.origin + window.location.pathname ) {
+    link.classList.add('active');
+  }
+});
+</script>
 
     <main>
 <section class="block block-light block-border block-brown mt">
