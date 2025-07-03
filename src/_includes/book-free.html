@@ -3,7 +3,7 @@
 "
 >
   <h2 class="text-center text-xl mt2">Start to Shape your Holiday Package</h2>
-  <section class="block block-light  block-border block-brown  mt" id="book">
+  <section class="block block-light block-border block-brown mt" id="book">
     <h3 class="text-lg">1.Pick your Accommodation type</h3>
     <p>
       Dependıng of your sıze of travelıng group and facılıtıes that you prefer
@@ -40,12 +40,7 @@
           <li>Daily house keeper service</li>
           <li>Starting from 400 € for a week</li>
         </ul>
-        <input
-          type="radio"
-          id="hotel"
-          name="accommodation"
-          value="hotel"
-        />
+        <input type="radio" id="hotel" name="accommodation" value="hotel" />
       </label>
     </div>
 
@@ -184,11 +179,11 @@
 
         <li>
           {% render "activity.html", color: "--blue-bg", title: "Refresh Dive",
-          image: "images/activities/beach.png", id: "refresh-dive", price: 80,
-          priceText: "80 € pp", items: "2 dives included|Recommended for divers
-          who haven't dived in a while|First dive includes skills practice
-          (e.g., mask clearing, regulator recovery)|Second dive is a relaxed fun
-          dive with GoPro footage|Certification required" %}
+          image: "images/activities/refreshDive.png", id: "refresh-dive", price:
+          80, priceText: "80 € pp", items: "2 dives included|Recommended for
+          divers who haven't dived in a while|First dive includes skills
+          practice (e.g., mask clearing, regulator recovery)|Second dive is a
+          relaxed fun dive with GoPro footage|Certification required" %}
         </li>
 
         <li>
@@ -230,8 +225,8 @@
 
         <li>
           {% render "activity.html", color: "--dark-brown", title: "BOAT TOUR",
-          image: "images/activities/watersports.png", id: "boat-tour", price:
-          60, priceText: "60 - 100 € pp", items: "Full-day tour:
+          image: "images/activities/boatTour.png", id: "boat-tour", price: 60,
+          priceText: "60 - 100 € pp", items: "Full-day tour:
           <strong><u>10:00-17:00</u></strong
           >|Sunset tours available on request|Visit<strong>4 bays</strong>:
           Mouse Island, Gerenlik Beach, Muar Cure, and Aquarium Bay|Natural
@@ -362,8 +357,10 @@
 
         <li>
           {% render "activity.html", color: "--light-brown", title: "TURKISH
-          BATH", image: "images/activities/bath.png", id: "turkish-bath", price:
-          20, priceText: "35 € pp", items: "<strong>45-minute</strong>
+          BATH", image: "images/activities/Turkish Bath.png", id:
+          "turkish-bath", price: 20, priceText: "35 € pp", items: "<strong
+            >45-minute</strong
+          >
           traditional experience|<strong>The Program includes:</strong
           ><br />-Full-body peeling (15 min)<br />-Foaming and foam massage<br />-Tea
           service and relaxation time|Optional addons (extra cost): <br />-Face
