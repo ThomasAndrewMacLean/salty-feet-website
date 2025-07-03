@@ -19,6 +19,7 @@ css: /public/css/gallery.css
     document.querySelectorAll('.gallery-item img').forEach(img => {
         img.style.cursor = 'pointer';
         img.addEventListener('click', function() {
+            console.log(this.srcset)
             // Create modal elements
             const modal = document.createElement('div');
             modal.style.position = 'fixed';
@@ -33,7 +34,7 @@ css: /public/css/gallery.css
             modal.style.zIndex = 10000;
 
             const imgLarge = document.createElement('img');
-            imgLarge.src = this.src.replace("-300", "-1200").replace("-600", "-1200");
+            imgLarge.src = this.srcset.split(", ").pop().split(" ")[0]; // Get the last image in srcset
             imgLarge.alt = this.alt;
             imgLarge.style.height = '90vh';
             imgLarge.style.width = 'auto';
