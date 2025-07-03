@@ -13,3 +13,48 @@ css: /public/css/gallery.css
   </div>
   {% endfor %}
 </div>
+
+
+<script>
+    document.querySelectorAll('.gallery-item img').forEach(img => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', function() {
+            // Create modal elements
+            const modal = document.createElement('div');
+            modal.style.position = 'fixed';
+            modal.style.top = 0;
+            modal.style.left = 0;
+            modal.style.width = '100vw';
+            modal.style.height = '100vh';
+            modal.style.background = 'rgba(0,0,0,0.8)';
+            modal.style.display = 'flex';
+            modal.style.alignItems = 'center';
+            modal.style.justifyContent = 'center';
+            modal.style.zIndex = 10000;
+
+            const imgLarge = document.createElement('img');
+            imgLarge.src = this.src.replace("-300", "-1200").replace("-600", "-1200");
+            imgLarge.alt = this.alt;
+            imgLarge.style.height = '90vh';
+            imgLarge.style.width = 'auto';
+            imgLarge.style.boxShadow = '0 0 20px #000';
+
+            modal.appendChild(imgLarge);
+            document.body.appendChild(modal);
+
+            // Close modal on click
+            modal.addEventListener('click', function() {
+                modal.remove();
+            });
+
+            // Close modal on Escape key
+            function handleEscape(e) {
+                if (e.key === "Escape") {
+                    modal.remove();
+                    document.removeEventListener('keydown', handleEscape);
+                }
+            }
+            document.addEventListener('keydown', handleEscape);
+        });
+    });
+</script>
