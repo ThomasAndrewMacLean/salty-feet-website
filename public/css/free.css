@@ -173,6 +173,17 @@
 }
 
 @media (max-width: 768px) {
+  /* .get-price{
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    right:1rem;
+   z-index: 10;
+
+  }  */
+  .activity-card .top img{
+    aspect-ratio: 5/4;
+  }
 .grid{
   grid-template-columns: 1fr;
 }
