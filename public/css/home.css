@@ -22,4 +22,13 @@ body:has(video) header{
 .hero-section h1{
     color:white;
     font-size: 3rem;
+    text-align: center;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
