@@ -107,20 +107,24 @@
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
-
-        const getPriceBtn = document.querySelector(".get-price");
+        debugger;
+     //   const getPriceBtn = document.querySelector(".get-price");
 
         // Show success message
-        getPriceBtn.textContent = "Sent successfully!";
+     //   getPriceBtn.textContent = "Sent successfully!";
         guideForm.reset();
-        submitFormModalButton.textContent = "Send";
-        submitFormModalButton.disabled = false;
+        if (submitFormModalButton) {
+          submitFormModalButton.textContent = "Send";
+          submitFormModalButton.disabled = false;
+        }
         document.getElementById("modal-social").style.display = "none";
       })
       .catch((error) => {
-        console.error("Error:", error);
-        submitFormModalButton.textContent = "Send";
-        submitFormModalButton.disabled = false;
+        console.error("Error:", error.message);
+        if (submitFormModalButton) {
+          submitFormModalButton.textContent = "Send";
+          submitFormModalButton.disabled = false;
+        }
         alert("There was an error sending your guide. Please try again.");
       });
   });
